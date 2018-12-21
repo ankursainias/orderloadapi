@@ -1,0 +1,15 @@
+current directory: /Users/ankur/Documents/orderloadapi/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+/Users/ankur/.rvm/rubies/ruby-2.5.3/bin/ruby -r ./siteconf20181210-25454-4mbkc4.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ankur/Documents/orderloadapi/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /Users/ankur/Documents/orderloadapi/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.bundle
+
+current directory: /Users/ankur/Documents/orderloadapi/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 websocket_mask.bundle ./.gem.20181210-25454-189obv8

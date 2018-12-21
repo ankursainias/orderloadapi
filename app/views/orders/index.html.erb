@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+<style>
+
+
+      .new_post:link, .new_post:visited {
+        background-color: #f44336;
+        color: white;
+        /*padding: 14px 25px;*/
+        padding: 6px 13px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        float: right;
+        margin-right: 29px;
+      }
+      .new_post:hover, .new_post:active {
+        background-color: red;
+      }
+</style>
+<b><%= link_to 'New Order', new_order_path, class: "new_post" %></b>
+<h1>Orders</h1>
+
+<div class="col-sm-10">
+<table>
+  <thead>
+    <tr>
+      <th>OrderID</th>
+      <th>SystemID</th>
+      <th>Tracker hash</th>
+      <th>Response</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.system_id %></td>
+        <td><%= order.tracker_hash %></td>
+        <td><%= order.response %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<div class="col-sm-2">
+<ul>
+  <% for row in @search.facet(:average_rating).rows %>
+    <li>
+      <% if params[:average_rating].blank? %>
+        <%= link_to row.value, :average_rating => row.value %> (<%= row.count %>)
+      <% else %>
+        <strong><%= row.value %></strong> (<%= link_to "remove", :average_rating => nil %>)
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+<br/>
+</div>
+<%= will_paginate @orders %>
+<%#= link_to 'New Order', new_order_path %>

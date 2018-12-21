@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>System:</strong>
+  <%= @order.system_id %>
+</p>
+
+<p>
+  <strong>Response:</strong>
+  <%= @order.response %>
+</p>
+
+<p>
+  <strong>Tracker hash:</strong>
+  <%= @order.tracker_hash %>
+</p>
+
+  <!-- <div id="map"></div> -->
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
